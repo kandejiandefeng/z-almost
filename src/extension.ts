@@ -4,16 +4,9 @@ import {translate} from './commands/translate';
 // 激活生命周期
 export function activate(context: vscode.ExtensionContext) {
 	let selectRange: vscode.TextEditorSelectionChangeEvent;
-
-	vscode.languages.registerHoverProvider('*', {
-		provideHover(document, position, token) {
-		  return new vscode.Hover('I am a hover!');
-		}
-	});
 	// 鼠标光标收集事件
 	vscode.window.onDidChangeTextEditorSelection((select: vscode.TextEditorSelectionChangeEvent) => {
 		selectRange = select;
-		console.log(selectRange.selections[0].start);
 	});
 
 	// 测试hello

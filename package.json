@@ -14,16 +14,23 @@
   "activationEvents": [
     "onView:nodeDependencies",
     "onCommand:z-almost.almost",
-    "onCommand:z-almost.translate",
-    "onLanguage:json",
-    "onLanguage:markdown",
-    "onLanguage:vue",
-    "onLanguage:typescript",
-    "onLanguage:纯文本"
-    
+    "onCommand:z-almost.translate"
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "configuration":{
+      "title": "zalmost",
+      "properties": {
+        "zalmost.baidu.appId": {
+          "type": "string",
+          "description": "百度翻译的appId"
+        },
+        "zalmost.baidu.secret": {
+          "type": "string",
+          "description": "百度翻译的secret"
+        }
+      }
+    },
     "viewsContainers": {
       "activitybar": [
         {
