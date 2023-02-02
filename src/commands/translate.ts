@@ -31,14 +31,15 @@ const getTranlate = (word: string) => {
             data += chunk;
         });
         res.on('end', () => {
+            // 解析翻译后的数据
             const option = JSON.parse(data);
-            console.log('result', option);
             if (option.hasOwnProperty('trans_result')) {
+                // 如果翻译成功  把数据填回当前位置
                 selectRange.textEditor.edit((editBuilder: vscode.TextEditorEdit) => {
                     editBuilder.replace(range, option.trans_result[0].dst);
                 });
             } else {
-                vscode.window.showErrorMessage(`${option.error_code}: ${option.error_msg}`)
+                vscode.window.showErrorMessage(`${option.error_code}: ${option.error_msg}`);
             }
         });
     });

@@ -14,7 +14,8 @@
         "curly": "warn",
         "eqeqeq": "warn",
         "no-throw-literal": "warn",
-        "semi": "off"
+        "semi": "off",
+        "indent": ["off", 2]
     },
     "ignorePatterns": [
         "out",
