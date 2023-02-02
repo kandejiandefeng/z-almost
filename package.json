@@ -2,7 +2,7 @@
   "name": "z-almost",
   "displayName": "z-almost",
   "description": "",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "publisher": "zhoushengli",
   "repository": {},
   "engines": {
@@ -15,6 +15,8 @@
     "onLanguage:html",
     "onLanguage:typescript",
     "onLanguage:javascript",
+    "onLanguage:vue",
+    "onLanguage:json",
     "onView:nodeDependencies",
     "onCommand:z-almost.almost",
     "onCommand:z-almost.translate",
@@ -110,7 +112,7 @@
     "@types/glob": "^8.0.0",
     "@types/mocha": "^10.0.0",
     "@types/node": "16.x",
-    "@types/vscode": "^1.74.0",
+    "@types/vscode": "^1.72.0",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "@vscode/test-electron": "^2.1.5",
@@ -123,7 +125,6 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "md5": "^2.3.0",
-    "vscode-languageserver": "^8.0.2"
+    "md5": "^2.3.0"
   }
 }

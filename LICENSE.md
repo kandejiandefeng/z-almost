@@ -1,18 +1,8 @@
-# 项目启动及发布流程
+## 功能一:翻译
 
-## 发布
+翻译，编辑中的汉字翻译成英文,框选好词语后鼠标右键点击翻译，或快捷键ctrl + H
 
-1. 全局安装 vsce， npm install -g vsce
-2. vsce login [开发作者]
-3. 项目package里面配置 publisher [开发作者]
-4. vsce publish
+## 功能二:代码片段保存及提示补全
 
-## 搭建项目
-
-1. npm install -g yo generator-code
-2. yo code
-
-## 调试
-npm run watch 运行项目
-按 F5 启动调试
-
+框选代码片段，然后右键保存代码，填写全英文或字母名字
+后输入关键词提示代码片段，选择后enter替换

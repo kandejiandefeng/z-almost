@@ -37,7 +37,7 @@ export function saveClip(
 // 工作区文本变化事件
 export function onTextChange(context: vscode.ExtensionContext) {
 	// 支持的语言类型
-	const LANGUAGES = ["typescript", "javascript", "html", "vue"];
+	const LANGUAGES = ["typescript", "javascript", "html", "vue", "json"];
 	//   触发推荐的字符列表
 	const triggers = [" ", ".", ">"];
 	const completionProvider = vscode.languages.registerCompletionItemProvider(

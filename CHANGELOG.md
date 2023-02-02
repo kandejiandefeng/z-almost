@@ -1,9 +1,8 @@
-# Change Log
+## 0.0.5
+添加翻译功能，目前只能汉译英 快捷键 ctrl + H
 
-All notable changes to the "z-almost" extension will be documented in this file.
+## 0.0.7
+添加保存代码片段及提示补全，框选鼠标右键保存片段
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+## 0.0.8
+修改代码补全.vue文件不触发bug
