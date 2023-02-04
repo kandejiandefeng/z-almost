@@ -1,13 +1,21 @@
 import * as vscode from 'vscode';
 import { translate } from './commands/translate';
 import { saveClip, onTextChange } from './commands/saveClip';
+import { previewInit, resetView } from './commands/preview';
 
 // 激活生命周期
 export function activate(context: vscode.ExtensionContext) {
+	if(!context) {
+		return;
+	}
 	let selectRange: vscode.TextEditorSelectionChangeEvent;
 	// 鼠标光标收集事件
 	vscode.window.onDidChangeTextEditorSelection((select: vscode.TextEditorSelectionChangeEvent) => {
 		selectRange = select;
+	});
+
+	vscode.workspace.onDidChangeTextDocument(() => {
+		resetView(context);
 	});
 
 	// 工作区输入改变代码提示
@@ -30,8 +38,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// 简便保存片段
 	vscode.commands.registerCommand('z-almost.saveClip', () => {
-		console.log(123);
 		saveClip(context, selectRange);
+	});
+
+	// 预览视图
+	vscode.commands.registerCommand('z-almost.preview', () => {
+		previewInit(context);
 	});
 }
 

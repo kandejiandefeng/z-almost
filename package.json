@@ -2,7 +2,7 @@
   "name": "z-almost",
   "displayName": "z-almost",
   "description": "",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "publisher": "zhoushengli",
   "repository": {},
   "engines": {
@@ -13,6 +13,7 @@
   ],
   "activationEvents": [
     "onLanguage:html",
+    "onLanguage:markdown",
     "onLanguage:typescript",
     "onLanguage:javascript",
     "onLanguage:vue",
@@ -21,7 +22,8 @@
     "onCommand:z-almost.almost",
     "onCommand:z-almost.retranslate",
     "onCommand:z-almost.translate",
-    "onCommand:z-almost.saveClip"
+    "onCommand:z-almost.saveClip",
+    "onCommand:z-almost.preview"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -71,19 +73,24 @@
         "command": "z-almost.saveClip",
         "title": "保存片段",
         "category": "z-almost"
+      },
+      {
+        "command": "z-almost.preview",
+        "title": "预览",
+        "category": "z-almost"
       }
     ],
     "keybindings": [
       {
         "command": "z-almost.translate",
         "key": "ctrl+1",
-        "mac": "cmd+H",
+        "mac": "cmd+1",
         "when": "editorTextFocus"
       },
       {
         "command": "z-almost.retranslate",
         "key": "ctrl+2",
-        "mac": "cmd+W",
+        "mac": "cmd+2",
         "when": "editorTextFocus"
       }
     ],
@@ -111,7 +118,7 @@
           "group": "z-almost"
         },
         {
-          "command": "z-almost.saveClip",
+          "command": "z-almost.preview",
           "group": "z-almost"
         }
       ],
@@ -151,6 +158,9 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@types/marked": "^4.0.8",
+    "cheerio": "^1.0.0-rc.12",
+    "marked": "^4.2.12",
     "md5": "^2.3.0"
   }
 }
