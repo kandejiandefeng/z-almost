@@ -69,6 +69,7 @@ export function onTextChange(context: vscode.ExtensionContext) {
 				Object.keys(option).forEach((item: string) =>
 					completionList.push({
 						label: item,
+						detail: option[item],
 						textEdit: new vscode.TextEdit(range, option[item]),
 					})
 				);

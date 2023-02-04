@@ -22,7 +22,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// 翻译指令
 	vscode.commands.registerCommand('z-almost.translate', () => {
-		translate(context, selectRange);
+		translate(selectRange, "en");
+	});
+	vscode.commands.registerCommand('z-almost.retranslate', () => {
+		translate(selectRange, "zh");
 	});
 
 	// 简便保存片段

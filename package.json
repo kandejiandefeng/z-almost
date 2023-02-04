@@ -2,7 +2,7 @@
   "name": "z-almost",
   "displayName": "z-almost",
   "description": "",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "publisher": "zhoushengli",
   "repository": {},
   "engines": {
@@ -19,6 +19,7 @@
     "onLanguage:json",
     "onView:nodeDependencies",
     "onCommand:z-almost.almost",
+    "onCommand:z-almost.retranslate",
     "onCommand:z-almost.translate",
     "onCommand:z-almost.saveClip"
   ],
@@ -57,42 +58,67 @@
     },
     "commands": [
       {
-        "command": "z-almost.helloWorld",
-        "title": "Hello World"
+        "command": "z-almost.retranslate",
+        "title": "翻译汉",
+        "category": "z-almost"
       },
       {
         "command": "z-almost.translate",
-        "title": "翻译"
+        "title": "翻译英",
+        "category": "z-almost"
       },
       {
         "command": "z-almost.saveClip",
-        "title": "保存片段"
+        "title": "保存片段",
+        "category": "z-almost"
       }
     ],
     "keybindings": [
       {
         "command": "z-almost.translate",
-        "key": "ctrl+H",
+        "key": "ctrl+1",
         "mac": "cmd+H",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "z-almost.retranslate",
+        "key": "ctrl+2",
+        "mac": "cmd+W",
         "when": "editorTextFocus"
       }
     ],
+    "submenus": [
+      {
+        "id": "almost.content",
+        "label": "z-almost"
+      }
+    ],
     "menus": {
-      "editor/context": [
+      "almost.content": [
         {
           "when": "editorHasSelection",
-          "command": "z-almost.helloWorld",
-          "group": "navigation"
+          "command": "z-almost.retranslate",
+          "group": "z-almost"
         },
         {
           "when": "editorHasSelection",
           "command": "z-almost.translate",
-          "group": "navigation"
+          "group": "z-almost"
         },
         {
           "when": "editorHasSelection",
           "command": "z-almost.saveClip",
-          "group": "navigation"
+          "group": "z-almost"
+        },
+        {
+          "command": "z-almost.saveClip",
+          "group": "z-almost"
+        }
+      ],
+      "editor/context": [
+        {
+          "submenu": "almost.content",
+          "group": "z-almost-main"
         }
       ]
     }
